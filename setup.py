@@ -44,12 +44,14 @@ setuptools.setup(
     zip_safe=False,
     include_package_data=True,
     setup_requires=[
-      'coverage >= 3.7.1',
-      'httpretty >= 0.8.10',
-      'nose >= 1.3.7'
+        'coverage >= 3.7.1',
+        'httpretty >= 0.8.10',
+        'nose >= 1.3.7'
     ],
     install_requires=[
         'aprs >= 6.0.0'
+        'pynmea2 >= 1.4.2',
+        'pyserial >= 2.7',
     ],
     classifiers=[
         'Topic :: Communications :: Ham Radio',
