@@ -95,8 +95,8 @@ def cli():
 
             if aprs_latitude is not None and aprs_longitude is not None:
                 frame = aprstracker.LocationFrame()
-                frame.source = opts.src_callsign
-                frame.destination = 'APYSTR'
+                frame.source = aprs.Callsign(callsign)
+                frame.destination = aprs.Callsign('APYSTR')
                 frame.latitude = aprs_latitude
                 frame.longitude = aprs_longitude
                 frame.course = 0
