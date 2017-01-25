@@ -3,11 +3,6 @@
 
 """Python APRS Tracker Commands."""
 
-__author__ = 'Greg Albrecht W2GMD <oss@undef.net>'
-__copyright__ = 'Copyright 2017 Greg Albrecht'
-__license__ = 'Apache License, Version 2.0'
-
-
 import argparse
 import logging
 import logging.handlers
@@ -16,6 +11,10 @@ import time
 import aprs
 
 import aprstracker
+
+__author__ = 'Greg Albrecht W2GMD <oss@undef.net>'
+__copyright__ = 'Copyright 2017 Greg Albrecht'
+__license__ = 'Apache License, Version 2.0'
 
 
 def setup_logging(log_level=None):
@@ -80,7 +79,7 @@ def cli():
     time.sleep(aprstracker.GPS_WARM_UP)
 
     aprs_i = aprs.TCP(opts.callsign, opts.passcode)
-    aprs_i.connect()
+    aprs_i.start()
 
     try:
         while 1:
@@ -96,7 +95,7 @@ def cli():
 
             if aprs_latitude is not None and aprs_longitude is not None:
                 frame = aprstracker.LocationFrame()
-                frame.source = src_callsign
+                frame.source = opts.src_callsign
                 frame.destination = 'APYSTR'
                 frame.latitude = aprs_latitude
                 frame.longitude = aprs_longitude

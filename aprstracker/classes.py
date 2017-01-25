@@ -8,6 +8,7 @@ import logging.handlers
 import threading
 
 import pynmea2
+import serial
 
 import aprs
 import aprstracker
@@ -20,7 +21,6 @@ __license__ = 'Apache License, Version 2.0'
 class SerialGPSPoller(threading.Thread):
 
     """Threadable Object for polling a serial NMEA-compatible GPS."""
-
 
     _logger = logging.getLogger(__name__)
     if not _logger.handlers:
@@ -63,6 +63,7 @@ class SerialGPSPoller(threading.Thread):
                                 '%s=%s', prop, self.gps_props[prop])
         except StopIteration:
             pass
+
 
 class LocationFrame(aprs.Frame):
     def __init__(self, frame=None):

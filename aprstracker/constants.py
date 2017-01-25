@@ -12,8 +12,8 @@ __license__ = 'Apache License, Version 2.0'
 
 LOG_LEVEL = logging.DEBUG
 LOG_FORMAT = logging.Formatter(
-    ('%(asctime)s aprstracker %(levelname)s %(name)s.%(funcName)s:%(lineno)d - '
-     '%(message)s'))
+    ('%(asctime)s aprstracker %(levelname)s %(name)s.%(funcName)s:%(lineno)d '
+     ' - %(message)s'))
 
 GPS_WARM_UP = 5
 

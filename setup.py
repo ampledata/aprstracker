@@ -8,8 +8,9 @@ Source:: https://github.com/ampledata/aprstracker
 """
 
 import os
-import setuptools
 import sys
+
+import setuptools
 
 __title__ = 'aprstracker'
 __version__ = '0.0.1b1'
@@ -61,5 +62,5 @@ setuptools.setup(
     keywords=[
         'Ham Radio', 'APRS', 'GPS'
     ],
-    entry_points={'console_scripts': ['aprstracker = tracker.cmd:cli']}
+    entry_points={'console_scripts': ['aprstracker = aprstracker.cmd:cli']}
 )
