@@ -49,7 +49,7 @@ setuptools.setup(
         'nose >= 1.3.7'
     ],
     install_requires=[
-        'aprs >= 6.0.0'
+        'aprs >= 6.0.0',
         'pynmea2 >= 1.4.2',
         'pyserial >= 2.7',
     ],
