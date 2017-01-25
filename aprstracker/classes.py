@@ -59,8 +59,8 @@ class SerialGPSPoller(threading.Thread):
                     for prop in aprstracker.NMEA_PROPERTIES:
                         if getattr(msg, prop, None) is not None:
                             self.gps_props[prop] = getattr(msg, prop)
-                            self._logger.debug(
-                                '%s=%s', prop, self.gps_props[prop])
+                            #self._logger.debug(
+                            #    '%s=%s', prop, self.gps_props[prop])
         except StopIteration:
             pass
 

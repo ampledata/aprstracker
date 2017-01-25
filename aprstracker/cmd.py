@@ -4,8 +4,6 @@
 """Python APRS Tracker Commands."""
 
 import argparse
-import logging
-import logging.handlers
 import time
 
 import aprs
@@ -15,28 +13,6 @@ import aprstracker
 __author__ = 'Greg Albrecht W2GMD <oss@undef.net>'
 __copyright__ = 'Copyright 2017 Greg Albrecht'
 __license__ = 'Apache License, Version 2.0'
-
-
-def setup_logging(log_level=None):
-    """
-    Sets up logging.
-
-    :param log_level: Log level to setup.
-    :type param: `logger` level.
-    :returns: logger instance
-    :rtype: instance
-    """
-    log_level = log_level or aprs.constants.LOG_LEVEL
-
-    logger = logging.getLogger(__name__)
-    logger.setLevel(log_level)
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(log_level)
-    console_handler.setFormatter(aprs.LOG_FORMAT)
-    logger.addHandler(console_handler)
-    logger.propagate = False
-
-    return logger
 
 
 def cli():
@@ -61,18 +37,8 @@ def cli():
     parser.add_argument(
         '-i', '--interval', help='interval', default=0
     )
-    parser.add_argument(
-        '-u', '--ssid', help='ssid', default='1'
-    )
 
     opts = parser.parse_args()
-
-    if opts.debug:
-        log_level = logging.DEBUG
-    else:
-        log_level = logging.INFO
-
-    logger = setup_logging(log_level)
 
     gps_p = aprstracker.SerialGPSPoller(opts.serial_port, opts.serial_speed)
     gps_p.start()
