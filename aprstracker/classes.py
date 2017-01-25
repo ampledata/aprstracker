@@ -9,6 +9,7 @@ import threading
 
 import pynmea2
 
+import aprs
 import aprstracker
 
 __author__ = 'Greg Albrecht W2GMD <oss@undef.net>'
@@ -95,4 +96,3 @@ class LocationFrame(aprs.Frame):
             ' ',
             self.comment
         ])
-    

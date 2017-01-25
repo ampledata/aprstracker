@@ -59,6 +59,7 @@ setuptools.setup(
         'License :: OSI Approved :: Apache Software License'
     ],
     keywords=[
-        'Ham Radio', 'APRS', 'KISS'
-    ]
+        'Ham Radio', 'APRS', 'GPS'
+    ],
+    entry_points={'console_scripts': ['aprstracker = tracker.cmd:cli']}
 )

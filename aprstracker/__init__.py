@@ -18,7 +18,7 @@ Python APRS Tracker.
 from .constants import (LOG_FORMAT, LOG_LEVEL, NMEA_PROPERTIES,  # NOQA
                         GPS_WARM_UP)
 
-from .classes import SerialGPSPoller  # NOQA
+from .classes import SerialGPSPoller, LocationFrame  # NOQA
 
 __author__ = 'Greg Albrecht W2GMD <oss@undef.net>'
 __copyright__ = 'Copyright 2017 Greg Albrecht'
